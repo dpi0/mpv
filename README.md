@@ -9,6 +9,30 @@
 
 <img width="1914" height="1041" alt="A_(23-29-49)_(06-Aug-25)" src="https://github.com/user-attachments/assets/e14fa322-0aeb-480f-8881-003b76011072" />
 
+## Windows Setup
+
+Fetch the latest release of mpv build for windows from [zhongfly/mpv-winbuild](https://github.com/zhongfly/mpv-winbuild) programatically
+
+Required [7-Zip](https://www.7-zip.org/). Get it via `winget install -e --id 7zip.7zip`
+
+```powershell
+cd ~/Downloads
+
+$latest = (Invoke-RestMethod "https://api.github.com/repos/zhongfly/mpv-winbuild/releases/latest").assets | Where-Object { $_.name -like "mpv-x86_64-v3-*-git-*.7z" } | Sort-Object name -Descending | Select-Object -First 1
+
+Invoke-WebRequest -Uri $latest.browser_download_url -OutFile $latest.name
+
+# extract the directory in C:\Programs\mpv
+# why this directory? it doesn't require admin privileges
+& "C:\Program Files\7-Zip\7z.exe" x (Join-Path (Get-Location) $latest.name) -oC:\Programs\mpv
+```
+
+place the configuration
+
+```powershell
+git clone https://github.com/dpi0/mpv C:\Programs\mpv\portable_config
+```
+
 ## OSC (On Screen Controller)
 
 - the ui elements
