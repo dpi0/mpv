@@ -56,3 +56,14 @@ mark chapters in a video and have them persisted.
 wget -O ~/.config/mpv/scripts/chapters.lua https://raw.githubusercontent.com/mar04/chapters_for_mpv/refs/heads/main/chapters.lua
 wget -O ~/.config/mpv/script-opts/chapters.conf https://raw.githubusercontent.com/mar04/chapters_for_mpv/refs/heads/main/chapters.conf
 ```
+
+### `vlcaspectratio` and `vlccrop`
+
+<https://github.com/kism/mpvscripts>
+
+implements VLC like aspect ratio and crop settings
+
+```bash
+wget -O ~/.config/mpv/scripts/vlcaspectratio.lua https://raw.githubusercontent.com/kism/mpvscripts/refs/heads/main/scripts/vlcaspectratio.lua
+wget -O ~/.config/mpv/scripts/vlccrop.lua https://raw.githubusercontent.com/kism/mpvscripts/refs/heads/main/scripts/vlccrop.lua
+```
