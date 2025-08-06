@@ -31,6 +31,9 @@ place the configuration
 
 ```powershell
 git clone https://github.com/dpi0/mpv C:\Programs\mpv\portable_config
+
+# replace the mpv_windows.conf with mpv.conf
+if (Test-Path "C:\Programs\mpv\portable_config\mpv.conf") { Remove-Item "C:\Programs\mpv\portable_config\mpv.conf" -Force }; Rename-Item "C:\Programs\mpv\portable_config\mpv_windows.conf" -NewName "mpv.conf"
 ```
 
 ## OSC (On Screen Controller)
